@@ -1,0 +1,7 @@
+{
+  "network": "sepolia",
+  "deployer": "0x3A6274107D9533e017A1FF6c799797b84112bB9C",
+  "Contract": {
+    "address": "0x383eCF8e94dA5baa6cf0f76233bF25C1E967d124"
+  }
+}

@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Team chain</title>
+  <link rel="stylesheet" href="./src/style.css" />
+  
+  <!-- JavaScript modules -->
+  <script type="module" src="./src/Wallet.ts"></script>
+  <script type="module" src="./src/main.ts"></script>
+  
+  <!-- UI scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="./global-Ux/loading-ui.js"></script>
+  <script type="module" src="./global-Ux/ui-core.js"></script>
+</head>
+
+<body>
+  <!-- Header section -->
+  <header class="topbar">
+    <!-- Brand logo and name -->
+    <div class="brand">
+      <h1>Team chain</h1>
+    </div>
+
+    <!-- Wallet connection container -->
+    <div class="wallet-container">
+      <appkit-button></appkit-button>
+    </div>
+
+    <!-- Mobile navigation toggle button -->
+    <button
+      id="navToggle"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="sideNav"
+      aria-label="Open navigation"
+    >
+      <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path
+          d="M3 6h18M3 12h18M3 18h18"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+        />
+      </svg>
+    </button>
+  </header>
+
+  <!-- Side navigation menu -->
+  <nav id="sideNav" class="side-nav" aria-hidden="true">
+    <div class="side-header">
+      <h2>Menu</h2>
+      <button id="navClose" class="close" aria-label="Close navigation">✕</button>
+    </div>
+
+    <!-- Navigation list -->
+    <ul class="nav-list">
+      <li>
+        <a href="/dashboard" onclick="go('/dashboard'); return false;">
+          Dashboard
+        </a>
+      </li>
+      <li>
+        <a href="/Projects" onclick="go('/Projects'); return false;">
+          Projects
+        </a>
+      </li>
+      <li>
+        <a href="/task" onclick="go('/task'); return false;">
+          Tasks
+        </a>
+      </li>
+      <li>
+        <a href="/about" onclick="go('/about'); return false;">
+          About Us
+        </a>
+      </li>
+    </ul>
+
+    <!-- Footer section of side navigation -->
+    <div class="side-footer">
+      <small>Version 0.1 · Trustless Team Protocol</small>
+    </div>
+  </nav>
+
+  <!-- Overlay for mobile navigation -->
+  <div id="overlay" class="overlay"></div>
+
+
+
+
+
+
+  <!-- Main content container with background -->
+  <div class="background">
+    <style>
+      .card {
+        width:50%;
+        margin: 0 auto;
+        margin-top: 20px;
+      }
+    </style>
+    <div class="card">
+   <p>Number: <span id="number">-</span></p>
+   <p>Address: <span id="addr">-</span></p>
+   </div>
+
+   <div class="card">
+    <button id="showData">Show Data</button>
+    <button id="incrementBtn">Increment</button>
+    <button id="decracementBtn">Decrement</button>
+    <button id="resetBtn">Reset Value</button>
+   </div>
+  </div>  <!-- closing tag for background -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Footer section - This is OUTSIDE div.background -->
+  <footer class="site-footer">
+    <div class="footer-content">
+      <h3>Contact Our Team</h3>
+      <p class="footer-desc">
+        Have questions, feedback, or need support? Reach us anytime at
+        <a href="mailto:support@trustlessteam.pro">support@trustlessteam.pro</a>
+      </p>
+
+      <div class="footer-links">
+        <a href="#docs">Documentation</a>
+        <a href="#governance">Governance</a>
+        <a href="#community">Community</a>
+        <a href="#status">System Status</a>
+      </div>
+
+      <div class="footer-socials">
+        <a href="#" aria-label="Twitter">🐦</a>
+        <a href="#" aria-label="GitHub">💻</a>
+        <a href="#" aria-label="Discord">💬</a>
+      </div>
+
+      <small>© 2025 Trustless Team Protocol — All Rights Reserved</small>
+    </div>
+  </footer>
+</body>
+</html>
