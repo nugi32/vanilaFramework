@@ -1,10 +1,37 @@
-// global/ui-core.js
-window.UI = {
+// global/ui-core.ts
+
+interface UILoading {
+  showLoading: (text?: string) => void;
+  hideLoading: () => void;
+}
+
+interface UINotify {
+  success: (title: string, text?: string) => void;
+  error: (text: string) => void;
+  info: (text: string) => void;
+}
+
+// Pastikan SweetAlert tersedia di global scope
+declare const Swal: {
+  fire: (options: {
+    icon: 'success' | 'error' | 'info';
+    title: string;
+    text?: string;
+    confirmButtonColor?: string;
+    showConfirmButton?: boolean;
+    allowOutsideClick?: boolean;
+  }) => void;
+};
+
+const UI: UILoading = {
   showLoading(text = "Processing...") {
     const el = document.getElementById("globalLoading");
     const txt = document.getElementById("loadingText");
 
-    if (txt) txt.textContent = text;
+    if (txt) {
+      txt.textContent = text;
+    }
+
     el?.classList.remove("hidden");
   },
 
@@ -13,7 +40,7 @@ window.UI = {
   }
 };
 
-window.Notify = {
+const Notify: UINotify = {
   success(title, text) {
     Swal.fire({
       icon: "success",
@@ -41,3 +68,7 @@ window.Notify = {
     });
   }
 };
+
+// expose ke global window
+window.UI = UI;
+window.Notify = Notify;

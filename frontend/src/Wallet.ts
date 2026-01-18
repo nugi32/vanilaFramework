@@ -3,7 +3,7 @@ import { EthersAdapter } from "@reown/appkit-adapter-ethers";
 import { mainnet, arbitrum, sepolia } from "@reown/appkit/networks";
 
 // 1. Get projectId from https://dashboard.reown.com
-const projectId = "";
+const projectId = import.meta.env.VITE_REOWN_PROJECT_ID;
 
 // 2. Create your application's metadata object
 const metadata = {

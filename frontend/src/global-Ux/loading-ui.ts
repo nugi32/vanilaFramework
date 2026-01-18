@@ -1,10 +1,19 @@
-import { Notify } from 'quasar';
-
 type WithUIOptions = {
   loadingText?: string;
   successMessage?: string | null;
   errorMessage?: string;
   silent?: boolean;
+};
+
+declare const UI: {
+  showLoading: (text?: string) => void;
+  hideLoading: () => void;
+};
+
+declare const Notify: {
+  success: (title: string, text?: string) => void;
+  error: (text: string) => void;
+  info: (text: string) => void;
 };
 
 export async function withUI<T>(
@@ -24,7 +33,7 @@ export async function withUI<T>(
       Notify.info(loadingText);
     }
 
-    const result: T = await callback();
+    const result = await callback();
 
     if (!silent) {
       UI.hideLoading();
@@ -34,7 +43,6 @@ export async function withUI<T>(
     }
 
     return result;
-
   } catch (err: unknown) {
     console.error(err);
 

@@ -1,16 +1,10 @@
 const fs = require('fs');
 const path = require('path');
 
-/**
- * Pastikan folder ada
- */
 function ensureDir(dir : string) {
   if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
 }
 
-/**
- * Kopi json secara rekursif
- */
 function copyJsonRecursive(src : string, dest : string) {
   ensureDir(dest);
 
@@ -43,17 +37,11 @@ function copyJob(src : string, dest : string, label = null) {
   ensureDir(dest);
 
   copyJsonRecursive(src, dest);
-  console.log(`✔️ DONE: ${label}`);
 }
 
 const SRC_USR = path.join(__dirname, '..', '..', 'artifacts', 'contracts', 'Counter.sol');
-const DEST_USR = path.join(__dirname, '..', 'src', 'artifact');
+const DEST_USR = path.join(__dirname, '..', 'artifact');
 
-
-
-// =============================
-// 🔥 EKSEKUSI SEKALI SAJA
-// =============================
 
 console.log("\n📦=== START COPY CONTRACTS ===");
 
