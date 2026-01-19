@@ -49,8 +49,6 @@ body { padding-top: 80px; }
   margin-bottom: 0px;
 }
 
-
-/* Brand kiri */
 .topbar .brand {
   margin-left: 20px;
   color: var(--text-main);
@@ -85,7 +83,7 @@ body { padding-top: 80px; }
   box-shadow: 0 10px 28px rgba(74,144,226,0.25);
 }
 
-/* Nav toggle (hamburger) */
+/* Nav toggle */
 .nav-toggle {
   background: transparent;
   border: none;
@@ -202,7 +200,6 @@ body { padding-top: 80px; }
   padding: 50px 20px;
 }
 
-/* Overlay agar konten jelas */
 .background::before {
   content: "";
   position: absolute;
@@ -216,9 +213,7 @@ body { padding-top: 80px; }
 }
 
 /* =========================================================
-   FOOTER (FIX VISIBILITY)
-   ---------------------------------------------------------
-   Footer diberi background solid terang
+   FOOTER
    ========================================================= */
 .site-footer {
   background: #F0F6FF;

@@ -1,19 +1,10 @@
-// External dependencies
 import { modal } from "./Wallet.ts";
 import { BrowserProvider, ethers } from "ethers";
 import { contractAddress } from "./address/addressConfig.ts";
 import type { Eip1193Provider } from "ethers";
 import { withUI } from "./global-Ux/loading-ui.ts";
 
-// ==============================
-// MODULE STATE
-// ==============================
-
 const ARTIFACT_PATH = "/artifact/counter.json";
-
-// ==============================
-// ABI & CONTRACT HELPERS
-// ==============================
 
 export async function loadABI(path : string) {
   const res = await fetch(path);
@@ -27,7 +18,7 @@ async function getContract(signer : ethers.Signer) {
   return new ethers.Contract(contractAddress, artifact.abi, signer);
 }
 
-
+/******************************************************************************************************/
 
 async function handleIncrement() {
   return withUI(
@@ -51,8 +42,6 @@ const walletProvider = modal.getWalletProvider()  as Eip1193Provider;
     }
   );
 }
-
-
 
 async function handleDecracement() {
   return withUI(
@@ -116,6 +105,8 @@ async function handleShowData() {
   document.getElementById("number")!.innerText = `${num.toString()}`;
   document.getElementById("addr")!.innerText = `${addr.toString()}`;
 }
+
+/******************************************************************************************************/
 
 document.getElementById("showData")!.onclick = async () => {
   handleShowData();

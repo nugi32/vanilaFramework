@@ -11,7 +11,6 @@ interface UINotify {
   info: (text: string) => void;
 }
 
-// Pastikan SweetAlert tersedia di global scope
 declare const Swal: {
   fire: (options: {
     icon: 'success' | 'error' | 'info';
@@ -69,6 +68,5 @@ const Notify: UINotify = {
   }
 };
 
-// expose ke global window
 window.UI = UI;
 window.Notify = Notify;

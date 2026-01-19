@@ -22,9 +22,6 @@ async function main() {
     );
   }
 
-  // ======================================================
-  // 3) stateVariable — NORMAL CONTRACT
-  // ======================================================
   console.log("Deploying Smart Contract (regular contract)...");
 
   const ContractFactory = await ethers.getContractFactory("counter");
@@ -43,7 +40,7 @@ const svArgs = [  //param in constructor
   console.log("Smart Contract deployed to:", contractAddress);
 
   // ======================================================
-  // SAVE ALL ADDRESS TO JSON (COMPLETE)
+  // SAVE ALL ADDRESS TO JSON
   // ======================================================
 
   const addresses = {

@@ -2,14 +2,12 @@ import { createAppKit } from "@reown/appkit";
 import { EthersAdapter } from "@reown/appkit-adapter-ethers";
 import { mainnet, arbitrum, sepolia } from "@reown/appkit/networks";
 
-// 1. Get projectId from https://dashboard.reown.com
 const projectId = import.meta.env.VITE_REOWN_PROJECT_ID;
 
-// 2. Create your application's metadata object
 const metadata = {
   name: "AppKit",
   description: "AppKit Example",
-  url: "http://localhost:5174/", // origin must match your domain & subdomain
+  url: "http://localhost:5174/",
   icons: ["https://avatars.githubusercontent.com/u/179229932"],
 };
 
@@ -20,6 +18,6 @@ export const modal = createAppKit({
   metadata,
   projectId,
   features: {
-    analytics: true, // Optional - defaults to your Cloud configuration
+    analytics: true,
   },
 });
